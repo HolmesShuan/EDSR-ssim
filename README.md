@@ -3,7 +3,7 @@ Different SSIM metrics in CNN-based super resolution algorithms, such as [EDSR](
 We transform those MATLAB codes to Python. 
 
 ### Disclaimer
-For better or worse performances than reported results in those papers, we are not responsible. Hopefully, you could find the code helpful in your research or work.
+For better or worse performances than reported results in those papers, we are not responsible. Hopefully, you may find these codes helpful in your research or work.
 
 **Note that** we omit the crop preprocess, which can be a game changer for super resolution problems. 
 Please follow the exact crop setting in those papers before calling SSIM functions. (PSNR seems to be a more unified metric. :( )
