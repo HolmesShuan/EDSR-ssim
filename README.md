@@ -114,4 +114,5 @@ def MSRN_compare_ssim(X, Y):
   '''
   ssim = compare_ssim(X, Y, data_range=max(Y.max(),X.max()) - min(X.min(),Y.min()) # one may obtain a slightly higher output than original setting
   # ssim = compare_ssim(X, Y, data_range=Y.max() - X.min())
+  return ssim
 ```
