@@ -73,7 +73,7 @@ def EDSR_compare_ssim(X, Y, sigma=1.5, K1=0.01, K2=0.03, R=255):
   Please follow the setting of psnr_ssim.m in EDSR (Enhanced Deep Residual Networks for Single Image Super-Resolution CVPRW2017).
   Official Link : https://github.com/LimBee/NTIRE2017/tree/db34606c2844e89317aac8728a2de562ef1f8aba
   The authors of EDSR use MATLAB's ssim as the evaluation tool, 
-  thus this function is the same as the ssim.m in MATLAB with C(3) == C(2)/2. 
+  thus this function is the same as ssim.m in MATLAB with C(3) == C(2)/2. 
   '''
   gaussian_filter = matlab_style_gauss2D((11, 11), sigma)
 
