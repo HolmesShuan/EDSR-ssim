@@ -1,4 +1,4 @@
-# ssim
+# EDSR-ssim
 Different SSIM metrics in CNN-based super resolution algorithms, such as [EDSR](https://github.com/LimBee/NTIRE2017/tree/db34606c2844e89317aac8728a2de562ef1f8aba), [RDN](https://github.com/yulunzhang/RDN) and [MSRN](https://github.com/MIVRC/MSRN-PyTorch).
 We transform those MATLAB codes to Python. 
 
