@@ -98,7 +98,7 @@ self.ckp.log[-1, idx_data, idx_scale] += utility.calc_psnr(
 )
 '''
 self.ckp.log[-1, idx_data, idx_scale] += utility.calc_ssim(
-    sr, hr
+    sr, hr, scale, self.args.rgb_range, dataset=d
 )
 ```
 
