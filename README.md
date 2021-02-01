@@ -42,7 +42,7 @@ def matlab_style_gauss2D(shape=(3,3),sigma=0.5):
     h /= sumh
   return h
 
-def calc_ssim(X, Y, sigma=1.5, K1=0.01, K2=0.03, R=255):
+def calc_ssim(X, Y, scale, rgb_range, dataset=None, sigma=1.5, K1=0.01, K2=0.03, R=255):
   '''
   X : y channel (i.e., luminance) of transformed YCbCr space of X
   Y : y channel (i.e., luminance) of transformed YCbCr space of Y
@@ -53,8 +53,18 @@ def calc_ssim(X, Y, sigma=1.5, K1=0.01, K2=0.03, R=255):
   '''
   gaussian_filter = matlab_style_gauss2D((11, 11), sigma)
 
-  X = X.astype(np.float64)
-  Y = Y.astype(np.float64)
+  if dataset and dataset.dataset.benchmark:
+    shave = scale
+    if X.size(1) > 1:
+        gray_coeffs = [65.738, 129.057, 25.064]
+        convert = X.new_tensor(gray_coeffs).view(1, 3, 1, 1) / 256
+        X = X.mul(convert).sum(dim=1)
+        Y = Y.mul(convert).sum(dim=1)
+  else:
+    shave = scale + 6
+
+  X = X[..., shave:-shave, shave:-shave].squeeze().cpu().numpy().astype(np.float64) 
+  Y = Y[..., shave:-shave, shave:-shave].squeeze().cpu().numpy().astype(np.float64)
 
   window = gaussian_filter
 
