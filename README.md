@@ -100,6 +100,13 @@ self.ckp.log[-1, idx_data, idx_scale] += utility.calc_ssim(
     sr, hr, scale, self.args.rgb_range, dataset=d
 )
 ```
+3. Edit [Line 105](https://github.com/sanghyun-son/EDSR-PyTorch/blob/a90b54d1b7f8ee780920e2ccd30692ab8e783f46/src/trainer.py#L105) in `trainer.py` as follow:
+
+```Python
+# '[{} x{}]\tPSNR: {:.3f} (Best: {:.3f} @epoch {})'.format(
+'[{} x{}]\SSIM: {:.3f} (Best: {:.3f} @epoch {})'.format(
+```
+
 
 ### Other SSIMs:
 
