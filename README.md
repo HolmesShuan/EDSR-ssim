@@ -1,9 +1,8 @@
 # EDSR-ssim
-Different SSIM metrics in CNN-based super resolution algorithms, such as [EDSR](https://github.com/LimBee/NTIRE2017/tree/db34606c2844e89317aac8728a2de562ef1f8aba), [RDN](https://github.com/yulunzhang/RDN) and [MSRN](https://github.com/MIVRC/MSRN-PyTorch).
-We transform those MATLAB codes to Python. 
+There are different SSIM metrics used in popular CNN-based super resolution algorithms, such as [EDSR](https://github.com/LimBee/NTIRE2017/tree/db34606c2844e89317aac8728a2de562ef1f8aba), [RDN](https://github.com/yulunzhang/RDN) and [MSRN](https://github.com/MIVRC/MSRN-PyTorch). In this project, we re-implement those metrics, from MATLAB to Python. 
 
 ### How to use ?
-1. Please refer to the [PSNR setting](https://github.com/thstkdgus35/EDSR-PyTorch/blob/a90b54d1b7f8ee780920e2ccd30692ab8e783f46/src/utility.py#L165) in EDSR, edit `utility.py` as follow:
+1. Please refer to the [PSNR setting](https://github.com/thstkdgus35/EDSR-PyTorch/blob/a90b54d1b7f8ee780920e2ccd30692ab8e783f46/src/utility.py#L165) proposed in EDSR. Then, one may edit `utility.py` as follow:
 ```Python
 '''
 def calc_psnr(sr, hr, scale, rgb_range, dataset=None):
@@ -218,4 +217,4 @@ def calc_ssim(X, Y):
 Please follow the exact crop setting in those papers before calling SSIM functions.
 
 ### Disclaimer:
-For better or worse performances than reported results in those papers, we are not responsible. Hopefully, you may find these codes helpful in your research or work.
+We are not responsible for better or worse performances than original results reported in those papers. Hopefully, you may find these codes helpful in your research or work.
